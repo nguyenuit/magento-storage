@@ -19,6 +19,11 @@ class ProductRepositoryInterface
             return $product;
         }
         $isHandMade = $this->getIsHandMade($product->getId());
+
+        $extensionAttributes = $product->getExtensionAttributes()->setIsHandMade($isHandMade);
+        $product->setExtensionAttributes($extensionAttributes);
+
+        return $product;
     }
 
     public function getIsHandMade($productId){
