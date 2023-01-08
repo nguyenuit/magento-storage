@@ -17,12 +17,22 @@ class ProductRepositoryInterface
 
     public function afterGet(MagentoRepository $subject, ProductInterface $product){
 
+        // add featured
         if ($product->getExtensionAttributes() && $product->getExtensionAttributes()->getIsFeatured()){
             return $product;
         }
         $isFeatured = $this->getIsFeatured($product->getId());
 
         $extensionAttributes = $product->getExtensionAttributes()->setIsFeatured($isFeatured);
+        $product->setExtensionAttributes($extensionAttributes);
+
+        // add handmade
+        if ($product->getExtensionAttributes() && $product->getExtensionAttributes()->getIsHandMade()){
+            return $product;
+        }
+        $isHandMade = $this->getIsHandMade($product->getId());
+
+        $extensionAttributes = $product->getExtensionAttributes()->setIsHandMade($isHandMade);
         $product->setExtensionAttributes($extensionAttributes);
 
         return $product;
@@ -32,6 +42,12 @@ class ProductRepositoryInterface
         return $this->_collectionFactory->create()
             ->addFieldToFilter('entity_id', ['eq' => $productId])
             ->getFirstItem()->getData('is_featured');
+    }
+
+    public function getIsHandMade($productId){
+        return $this->_collectionFactory->create()
+            ->addFieldToFilter('entity_id', ['eq' => $productId])
+            ->getFirstItem()->getData('is_handmade');
     }
 }
 

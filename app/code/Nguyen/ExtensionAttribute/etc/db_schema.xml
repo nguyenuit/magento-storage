@@ -9,5 +9,6 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
         <table name="catalog_product_entity" resource="default" engine="innodb" comment="Catalog Product Table">
             <column xsi:type="varchar" name="is_featured" nullable="true" length="64" comment="Is Featured" />
+            <column xsi:type="varchar" name="is_handmade" nullable="true" length="64" comment="Is HandMade" />
         </table>
 </schema>
