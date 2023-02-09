@@ -1,0 +1,48 @@
+<?php 
+if ($this->helper('Nguyen\AjaxHolePunching\Helper\Data')->isLoggedIn()){
+    if ('customer' == $this->getData('moduleName')){
+    // customer page
+?>
+    <div data-block="login-dropdown" class="login-wrapper">
+        <span data-trigger="login-trigger" id="login-select" class="account_isloggedin">
+
+            <a href="/customer/account/logout/" class="account_link">
+                <?php echo __('Logout'); ?>
+            </a>
+        </span>
+    </div>
+
+    <?php 
+    }else{
+        // other pages
+    ?>
+    <div data-block="login-dropdown" class="login-wrapper">
+        <span data-trigger="login-trigger" id="login-select" class="account_isloggedin">
+            <a href="/customer/account/" class="account_link">
+                <span>Account</span>
+            </a>
+        </span>
+    </div>
+    <?php 
+    }
+}else{
+?>
+<div data-block="login-dropdown" class="login-wrapper">
+    <span data-trigger="login-trigger" id="login-select">
+        <?php echo __('Sign In'); ?>
+        <i class="fa fa-lg fa-caret-down"></i>
+        <i class="fa fa-lg fa-caret-up"></i>
+    </span>
+</div>
+<div class="block login-block">
+    <div>
+        <ul id="login-list">
+            <!-- fixed store to test -->
+            <li><a href="<?php echo $this->_storeManager->getStore(1)->getBaseUrl() . "customer/account/login" ?>">Private client</a></li>
+            <li><a href="<?php echo $this->_storeManager->getStore(2)->getBaseUrl() . "customer/account/login"; ?>">Business customer</a></li>
+        </ul>
+    </div>
+</div>
+<?php
+}
+?>

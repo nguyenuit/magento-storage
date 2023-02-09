@@ -1,0 +1,27 @@
+<?php
+if ($this->helper('Nguyen\AjaxHolePunching\Helper\Data')->isLoggedIn()){
+    if('customer' == $this->getData('moduleName')){
+        //customer page
+?>
+        <ul id="mobile-login-list">
+            <li><a href="/customer/account/logout/">Logout</a></li>
+        </ul>
+    <?php 
+    }else{
+    ?>
+        <ul id="mobile-login-list">
+            <li><a href="/customer/account/">Account</a></li>
+        </ul>
+    <?php 
+    }
+}else{
+$retailBaseUrl = $this->_storeManager->getStore(1)->getBaseUrl(); 
+$wholesaleBaseUrl = $this->_storeManager->getStore(2)->getBaseUrl();
+?>
+    <ul id="mobile-login-list">
+        <li><a href="<?php echo $retailBaseUrl . "customer/account/login" ?>">Particuliere klant</a></li>
+        <li><a href="<?php echo $wholesaleBaseUrl . "customer/account/login"; ?>">Zakelijke klant</a></li>
+    </ul>
+<?php
+}
+?>

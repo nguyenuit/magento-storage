@@ -1,0 +1,22 @@
+{
+    "name": "nguyen/module-ajaxholepunching",
+    "description": "Nguyen AjaxHolePunching",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "info@mage2gen.com",
+            "name": "Mage2Gen"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Nguyen\\AjaxHolePunching\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
