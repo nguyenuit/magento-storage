@@ -1,0 +1,22 @@
+{
+    "name": "nguyen/module-productnotification",
+    "description": "Nguyen ProductNotification",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "nguyenuit@gmail.com",
+            "name": "Ly Thai Nguyen"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Nguyen\\ProductNotification\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

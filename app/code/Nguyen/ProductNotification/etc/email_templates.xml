@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+	
+    <template id="product_quantity_notification_email_template" label="Product Notification Email" file="product_quantity_notification_email_template.html" type="html" module="Nguyen_ProductNotification" area="frontend"/>
+
+    <template id="product_sales_notification_email_template" label="Product Notification Email" file="product_sales_notification_email_template.html" type="html" module="Nguyen_ProductNotification" area="frontend"/>
+</config>

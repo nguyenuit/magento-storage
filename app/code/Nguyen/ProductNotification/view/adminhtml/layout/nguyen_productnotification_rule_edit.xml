@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="admin-2columns-left">
+    <update handle="editor"/>
+	<body>
+
+		<referenceContainer name="content">
+            <block class="Nguyen\ProductNotification\Block\Adminhtml\Rule\Edit" name="nguyen_productnotification_rule_edit"/>
+		</referenceContainer>
+
+	 	<referenceContainer name="left">
+            <block class="Nguyen\ProductNotification\Block\Adminhtml\Rule\Edit\Tabs" name="nguyen_productnotification_rule_tabs">
+
+                <block class="Nguyen\ProductNotification\Block\Adminhtml\Rule\Edit\Tab\Rule" name="nguyen_productnotification_rule_edit_tab_general"/>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">rule</argument>
+                    <argument name="block" xsi:type="string">nguyen_productnotification_rule_edit_tab_general</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">product</argument>
+                    <argument name="block" xsi:type="array">
+                        <item name="label" xsi:type="string">Assign to Products</item>
+                        <item name="title" xsi:type="string">Assign to Products</item>
+                        <item name="url" xsi:type="helper" helper="Nguyen\ProductNotification\Helper\Data::getProductsGridUrl"/>
+                        <item name="class" xsi:type="string">ajax</item>
+                    </argument>
+                </action>
+            </block>
+        </referenceContainer>
+
+	</body>
+</page>

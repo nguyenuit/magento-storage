@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Nguyen_ProductNotification::nguyen_productnotification_rule"
+			 action="nguyen_productnotification/rule/index"
+			 module="Nguyen_ProductNotification"
+			 parent="Magento_Catalog::inventory"
+			 resource="Magento_Backend::content" sortOrder="21" title="Product Notification"
+		/>
+	</menu>
+</config>

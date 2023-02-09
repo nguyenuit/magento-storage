@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Nguyen\ProductNotification\Api\RuleRepositoryInterface" type="Nguyen\ProductNotification\Model\RuleRepository"/>
+	<preference for="Nguyen\ProductNotification\Api\Data\RuleInterface" type="Nguyen\ProductNotification\Model\Data\Rule"/>
+	<preference for="Nguyen\ProductNotification\Api\Data\RuleSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Nguyen\ProductNotification\Model\ResourceModel\Rule\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">nguyen_productnotification_rule</argument>
+			<argument name="resourceModel" xsi:type="string">Nguyen\ProductNotification\Model\ResourceModel\Rule\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="nguyen_productnotification_rule_listing_data_source" xsi:type="string">Nguyen\ProductNotification\Model\ResourceModel\Rule\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>
