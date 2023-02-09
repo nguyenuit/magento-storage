@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+        <section id="salesrule_couponcode" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="999" translate="label">
+			<label>Coupon Code</label>
+			<tab>nguyen</tab>
+			<resource>Nguyen_SalesRule::salesrule_couponcode</resource>      
+			<group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Configuration</label>
+				<field id="enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Enabled</label>
+					<comment>Disable coupon code for order item if specific tier price level or higher applied</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="tier_price_level" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
+					<label>Tier price level</label>
+					<comment/>
+				</field>
+				<field id="coupon_code" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
+					<label>Specific coupon code applied for pallet</label>
+					<comment>Enable coupon code for only order item as pallet/highest tier price</comment>
+				</field>
+			</group>			
+		</section>
+	</system>
+</config>
