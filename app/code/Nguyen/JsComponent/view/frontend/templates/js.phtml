@@ -1,0 +1,50 @@
+<div class="nguyen-product-multisteps"  id="nguyen-product-multisteps">
+	<script type="text/x-magento-init">
+	{
+		"*":{
+			"Magento_Ui/js/core/app": {
+				"components":{
+					"multi-steps":{
+						"component":"Nguyen_JsComponent/js/multi-steps",
+						"template":"Nguyen_JsComponent/multi-steps",
+						"options": {
+							"categoryIds": <?= /* @escapeNotVerified */ @json_encode($categoryIds, true)?>
+						},
+						"children":{
+							"step-1":{
+								"component":"Nguyen_JsComponent/js/step-1",
+								"template":"Nguyen_JsComponent/step-1"
+							},
+							"step-2":{
+								"component":"Nguyen_JsComponent/js/step-2",
+								"template":"Nguyen_JsComponent/step-2"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	</script>
+	<div data-bind="scope: 'multi-steps'">
+		<ol class="steps">
+			<li class="active" data-bind="css: { active: getActiveSteps() >= 1 }">
+				<span class="number" data-bind="click: setActiveSteps(1)">1</span><span>Test 1</span>
+				<span class="selected-item-name" data-bind="text: getSelectedItemStepTitle1()"></span>
+			</li>
+			<li data-bind="css: { active: getActiveSteps() >= 2 }">
+				<span class="number" data-bind="click: function () { activeStep(20) }">2</span>
+				<span data-bind="click: function () { activeStep(20) }">Test 2</span>
+				<span class="selected-item-name" data-bind="text: getSelectedItemStepTitle2()"></span>
+
+				<span data-bind="if: getSelectedItemStepTitle21(), click: function () { activeStep(21) }">Test 3</span>
+				<span class="selected-item-name" data-bind="text: getSelectedItemStepTitle21()"></span>
+
+				<span data-bind="if: getSelectedItemStepTitle22(), click: function () { activeStep(22) }">Test 4</span>
+				<span class="selected-item-name" data-bind="text: getSelectedItemStepTitle22()"></span>
+			</li>
+		</ol>
+		<!-- ko template:getTemplate() -->
+		<!-- /ko -->
+	</div>
+</div>

@@ -1,0 +1,22 @@
+{
+    "name": "nguyen/module-jscomponent",
+    "description": "Nguyen JsComponent",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "email": "nguyenuit@gmail.com",
+            "name": "Ly Thai Nguyen"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Nguyen\\JsComponent\\": ""
+        }
+    }
+}
