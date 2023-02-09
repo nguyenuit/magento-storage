@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+     	
+        <tab id="Nguyen" translate="label" sortOrder="100">
+            <label>Nguyen</label>
+        </tab>
+        <section id="Nguyen_navigation_elements" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>Navigation Elements</label>
+            
+            <tab>Nguyen</tab>
+            <resource>Nguyen_CategoriesNavigation::nguyen_navigation_elements</resource>            
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="is_enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Show Navigation Elements</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>                
+            </group>
+            
+        </section>
+    </system>
+    
+</config>

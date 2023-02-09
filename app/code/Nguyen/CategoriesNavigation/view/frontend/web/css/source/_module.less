@@ -1,0 +1,202 @@
+
+.category-description{padding-right:0;}
+.slider{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+.slick-slide  {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4rem;
+    padding: .9rem 1.6rem 1rem;
+    white-space: nowrap;
+    color: #111;
+    margin-right:10px;
+
+}
+.slick-slide .product-image img{
+    position: absolute;
+    top: 1px;
+    max-height:47px;
+}
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent
+}
+
+.slick-slider button{display:inline-block;}
+
+.slick-prev, .slick-next{
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    /*width: 20px;
+    height: 20px;*/
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    /*color: transparent;*/
+    border: none;
+    outline: none;
+    background: red;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+
+}
+.slick-prev {
+    left: -25px;
+}
+.slick-next {
+    right: -25px;
+}
+.slick-prev:before {
+    content: "<";
+    color: #000;
+    font-size: 25px;
+    margin-left: 24px;
+    vertical-align: middle;
+}
+
+.slick-next:before {
+    content: ">";
+    color: #000;
+    font-size: 25px;
+    margin-left: -24px;
+    vertical-align: middle;
+}
+
+.slick-slider .slick-list{
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-slider .slick-track{
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before, .slick-track:after{
+    display: table;
+    content: '';
+}
+.slick-initialized .slick-slide{
+    display: block;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+.slick-slide .product-image img{
+    max-width: 40px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width:480px) { 
+    .slick-prev, .slick-next { display:none!important; }
+}
+
+.slick-prev.slick-arrow:hover{
+    background-color: white;
+    border-color: #ccc;
+}
+.slick-next.slick-arrow:hover{
+    background-color: white;
+    border-color: #ccc;
+}
+.slick-slider button {
+    width: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.slick-slider {
+    .slick-prev{
+        left: -15px;
+    }
+    .slick-next{
+        right: -15px;
+    }
+    .slick-prev, .slick-next {
+        top: 25px;
+    }
+    .slick-prev:before, .slick-next:before{
+        
+        opacity: 0.75;
+        color: #000;
+    }
+    .slick-prev:before {
+        margin-left: 10px;
+    }
+    .slick-next:before{
+        margin-left: unset;
+        margin-right: 10px;
+    }
+    .slick-slide .product-image img{
+        max-height: 40px;
+    }
+}
+body.catalog-category-view .category-description, body.catalogsearch-result-index .category-description{
+    padding-right: 0;
+}
+
+.slick-slide {
+    .product-image {
+        position: relative;
+        width: 50px;
+        img{
+            top: 10px;
+            left: 23px;
+        }
+    }
+    .product-title{
+        margin-left: 60px;
+    }
+}
+.slick-slide{
+    position: relative;
+    border: 1px solid #003e7e;
+    border-radius: 2rem;
+    padding: 0.9rem 1.6rem 1rem;
+    white-space: nowrap;
+    color: #111;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,32 @@
+<?php if ($this->helper('Nguyen\CategoriesNavigation\Helper\Data')->isEnabled()){?>
+<div id="horizontal-navigation-elements" data-mage-init='{"Nguyen_CategoriesNavigation/js/slick-nav":{}}'>
+    <div class="slider responsive">
+        <?php 
+            $navEls = $block->loadNavEls();
+
+            if (isset($navEls)){
+
+                foreach ($navEls as $el) {
+        ?>
+                <div>
+                    <a href="<?php echo $el['link'] ?>">
+                        
+                        <div class="product-image">
+                            <?php if ($el['image_url']){?>
+                            <img loading="lazy" src="<?php echo $el['image_url']?>" alt="<?php echo $el['name']?>" style="max-width: 40px;">
+                            <?php }?>
+                        </div>
+                        <div class="product-title">
+                            <?php echo $el['name']?>
+                        </div>
+                    </a>
+                </div>
+        <?php
+
+                }
+            }
+        ?>
+
+    </div>
+</div>
+<?php }?>
