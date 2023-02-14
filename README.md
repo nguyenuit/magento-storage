@@ -1,1 +1,1 @@
-# magento-code-sample
+A good place to find valid ways for many problems in store development based on Magento.
