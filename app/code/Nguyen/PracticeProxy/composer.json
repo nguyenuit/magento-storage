@@ -1,0 +1,22 @@
+{
+    "name": "nguyen/module-practiceproxy",
+    "description": "Nguyen PracticeProxy",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Nguyen",
+            "email": "nguyenuit@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Nguyen\\PracticeProxy\\": ""
+        }
+    }
+}
